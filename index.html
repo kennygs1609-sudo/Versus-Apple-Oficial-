@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Cadastro do Cliente - Versus</title>
+<title>Cadastro do Cliente - Versus Apple Oficial</title>
 
 <style>
 body {
@@ -14,39 +14,66 @@ body {
     max-width: 420px;
     margin: 30px auto;
     background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.logo img {
+    width: 120px;
 }
 
 h2 {
     text-align: center;
     color: purple;
+    margin-bottom: 5px;
+}
+
+.insta {
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 20px;
 }
 
 h3 {
     margin-top: 20px;
     color: #444;
+    font-size: 16px;
 }
 
 input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin: 6px 0;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
 }
 
 button {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     background: purple;
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: bold;
     margin-top: 15px;
     cursor: pointer;
+    font-size: 15px;
+}
+
+.footer {
+    font-size: 12px;
+    color: #777;
+    margin-top: 15px;
+    text-align: center;
 }
 </style>
 </head>
@@ -54,7 +81,14 @@ button {
 <body>
 
 <div class="container">
-    <h2>Versus Tecnologia</h2>
+
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="https://i.imgur.com/sualogo.png" alt="Logo Versus">
+    </div>
+
+    <h2>Versus Apple Oficial</h2>
+    <div class="insta">@versusappleoficial</div>
 
     <h3>Dados Pessoais</h3>
     <input type="text" id="nome" placeholder="Nome completo">
@@ -75,10 +109,16 @@ button {
     <input type="text" id="estado" placeholder="Estado">
 
     <button onclick="enviar()">Finalizar Cadastro</button>
+
+    <div class="footer">
+        🔒 Seus dados são protegidos e usados apenas para análise de compra.
+    </div>
+
 </div>
 
 <script>
-// Máscara CPF
+
+// CPF máscara
 document.getElementById('cpf').addEventListener('input', function(e) {
     let v = e.target.value.replace(/\D/g, '');
     v = v.replace(/(\d{3})(\d)/, '$1.$2');
@@ -87,7 +127,7 @@ document.getElementById('cpf').addEventListener('input', function(e) {
     e.target.value = v;
 });
 
-// Buscar CEP
+// CEP automático
 function buscarCEP() {
     let cep = document.getElementById("cep").value.replace(/\D/g, '');
     
@@ -121,7 +161,8 @@ let bairro = document.getElementById("bairro").value;
 let cidade = document.getElementById("cidade").value;
 let estado = document.getElementById("estado").value;
 
-let mensagem = `Cadastro do Cliente - Versus
+let mensagem = `Cadastro do Cliente - Versus Apple Oficial
+Instagram: @versusappleoficial
 
 Nome: ${nome}
 CPF: ${cpf}
